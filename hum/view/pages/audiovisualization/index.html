@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
+  <meta charset="utf-8">
+  <meta content='IE=8' http-equiv='X-UA-Compatible'>
+  <title>Frequcency analysis using HTML5 Audio and Web Audio API</title>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link href="../../../assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="../../../assets/css/circle.css"> -->
+  <link rel="stylesheet" href="../../../assets/css/custom.css">
+  <!-- <link rel="stylesheet" href="../../../assets/css/buttons.css"> -->
+
+
+        <script src="src/bufferloader.js"></script>
+        <script src="src/id3-minimized.js"></script>
+
+        </script>
+
+</head>
+  <body>
+    <header class="site-header" role="banner">
+
+	<!--NAVBAR-->
+      <div class="navbar-wrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    				<div class="container">
+    					<div class="navbar-header">
+    						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    							<span class="sr-only">Toggle Navigation</span>
+    							<span class="icon-bar"></span>
+    							<span class="icon-bar"></span>
+    							<span class="icon-bar"></span>
+    						</button>
+    					</div>
+
+    					<div class="navbar-collapse collapse">
+    						<ul class="nav navbar-nav">
+    							<li class="active"><a href="../home.php">Home</a></li>
+    							<!-- <li onclick="stopMic()"><a href="#">harmony</a></li>
+    							<li><a href="blog.html">understanding</a></li>
+    							<li><a href="contact.html">mindfulness</a></li> -->
+                  <li id="sawtooth"><a href="#">sawtooth</a></li>
+                  <li id="sine"><a href="#">sine</a></li>
+                  <li id="square"><a href="#">square</a></li>
+                  <!-- <li id="rainbow">rainbow</li> -->
+                  <li id="rainbow"><a href="">stop</a></li>
+
+
+                  <li><input id = "on-off" type="button" value="start" onclick="stopMic()"></li>
+
+                  <li><input id = "range" type="range" min="110" max="400" style="width: 200px;"></li>
+                  <li class="pitchVal" style="text-align: right; color: white; margin-top: 20px; margin-left: 40px;"><span id="note">--</span></li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+    		</div>
+	     </header>
+
+<!-- THIS IS THE CANAS FOR THE ANIMATION -->
+       <canvas id="freq" width="1024" height="525"></canvas>
+<!-- THIS IS THE CANAS FOR THE ANIMATION -->
+
+<!-- THIS IS THE CENTRE CIRCLE FOR OSCILLATOR COLOUR -->
+       <div id="detector" class="detector" style="background-color: #222; color: white" onclick="useMic()">
+<!-- THIS IS THE CENTRE CIRCLE FOR OSCILLATOR COLOUR -->
+<div class="note"><span id="pitch">Click here to begin</span></div>
+
+
+			 <!-- <div class="pitch" style="background-color: black; text-align: center;" onclick="stopMic()"></div> -->
+			 <canvas id="output" width=300 height=42></canvas>
+		   </div>
+	<!-- <span id="loading"></span> -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="src/setUp.js"></script>
+        <script src="src/autoCorrelate.js"></script>
+        <script src="src/circleAnimation.js"></script>
+        <script src="src/colourPitch.js"></script>
+        <script src="src/scales.js"></script>
+        <script src="src/oscillator.js"></script>
+      </body>
+</html>
